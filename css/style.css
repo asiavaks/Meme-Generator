@@ -1,0 +1,464 @@
+* {
+    box-sizing: border-box;
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: montserrat;
+    src: url(../fonts/montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: montserrat-medium;
+    src: url(../fonts/montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: impact;
+    src: url(../fonts/impact/impact.ttf);
+}
+
+@font-face {
+    font-family: montserrat-bold;
+    src: url(../fonts/montserrat/Montserrat-semiBold.ttf);
+}
+
+/* BASE */
+
+html {
+    font-family: montserrat-medium, serif;
+    color: #f5f0f0;
+    background-color: #e3e3e3;
+    line-height: 2;
+}
+
+body {
+    margin: 0;
+    /* font-size: 0.875rem; */
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    line-height: 1;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.875rem;
+    margin-bottom: 26px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* HEADER */
+
+.main-header {
+    height: 66px;
+    /* background-color: rgb(252, 149, 46); */
+    background-color: #FF8000;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+}
+
+.main-nav li a {
+    padding-top: 15px;
+    display: inline-block;
+    width: 130px;
+    height: 66px;
+    text-align: center;
+}
+
+.main-nav li a:hover {
+    background-color: rgba(241, 230, 219, 0.4);
+}
+
+.logo {
+    font-family: impact, sans-serif;
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.5px;
+    width: 133px;
+}
+
+.main-nav li a {
+    text-transform: uppercase;
+}
+
+.btn-menu {
+    visibility: hidden;
+}
+
+/* MAIN */
+
+.canvas-container {
+    display: flex;
+}
+
+button, .btn {
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: montserrat-bold;
+    color: #FF8000;
+}
+
+.share-btn, .save-btn {
+    background-color: #FF8000;
+    color: rgb(250, 250, 250);
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: montserrat-bold;
+    /* margin-left: 20px; */
+}
+
+.save-btn {
+    padding-top: 15px;
+    /* font-size: 0.95rem; */
+    margin-left: 40px;
+    grid-column: 4/5;
+}
+
+.color-icon * {
+    width: 60px;
+    height: 60px;
+}
+
+button, .btn :hover {
+    cursor: pointer;
+}
+
+input.file-input.btn {
+    background-color: white;
+    border: none;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.control-box {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(60px, 60px));
+    grid-auto-rows: 60px;
+    gap: 25px 20px;
+    max-width: 370px;
+    margin-left: 100px;
+}
+
+.canvas-stickers {
+    width: 373px;
+    height: 110px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    grid-column: 1/6;
+    grid-row: 5/6;
+    margin-top: -15px;
+}
+
+.sticker {
+    width: 75px;
+    height: 70px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.gallery-memes {
+    grid-column: 1/6;
+    grid-row: 6;
+    margin-top: 20px;
+    background-color: #FF8000;
+    color: white;
+    border-radius: 12px;
+    height: 40px;
+    text-align: center;
+}
+
+.publish-memes * {
+    grid-column: 1/6;
+    /* grid-row: 7; */
+    background-color: #FF8000;
+    color: white;
+    border-radius: 12px;
+    height: 40px;
+    text-align: center;
+}
+
+.txt-meme {
+    grid-column: 1/6;
+    width: 370px;
+    height: 60px;
+    border-radius: 5px;
+    border: none;
+    font-size: 25px;
+}
+
+/* .control-box>* {
+    color: #FF8000;
+} */
+
+/* .btn.save {
+    color:white;
+    height: 30px;
+} */
+
+.imgs-container, .memes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
+    grid-auto-rows: 280px;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.memes-container.hidden {
+    display: none;
+}
+
+.imgs-container.hidden {
+    display: none;
+    width: 0px;
+    height: 0px;
+}
+
+.imgs-container * {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+img:hover {
+    border: 2px solid #c7b4a059;
+}
+
+.generator {
+    max-width: 990px;
+    margin: 0 auto;
+}
+
+.canvas-container {
+    background-color: rgb(255, 255, 255);
+    width: 540px;
+    height: 550px;
+}
+
+.generator.hidden {
+    display: none;
+}
+
+.main-container {
+    max-width: 1000;
+    margin: 0 auto;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    margin-bottom: 230px;
+}
+
+/* flex */
+
+.flex {
+    display: flex;
+}
+
+.flex.wrap {
+    flex-wrap: wrap;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+/* lists */
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* SCREEN */
+
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .8s;
+}
+
+/* FOOTER */
+
+.main-footer {
+    max-width: 100%;
+    height: 200px;
+    box-shadow: inset 0 1px 0 #e1e0e0;
+    background-color: #FF8000;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+}
+
+@media (max-width: 1160px) {
+    .control-box {
+        margin-left: 100px;
+    }
+    .canvas-container {
+        width: 430px;
+        height: 410px;
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 970px) {
+    .control-box {
+        margin-left: 40px;
+    }
+    .main-container {
+        margin: 0 auto;
+        margin-bottom: 100px;
+    }
+    .canvas-container {
+        width: 400px;
+        height: 390px;
+    }
+    .main-footer {
+        height: 80px;
+    }
+}
+
+/* ONLY MOBILE */
+
+@media (max-width: 840px) {
+    .main-nav {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: #FF8000;
+        border-left: 1px solid #c4c4c4;
+        transform: translateX(100%);
+        transition: transform .8s, box-shadow .3s;
+    }
+    .menu-open .main-nav {
+        transform: translateX(0);
+        box-shadow: -6px 0px 14px rgba(0, 0, 0, 0.2);
+    }
+    .btn-menu {
+        color: rgb(241, 238, 235);
+        background-color: #FF8000;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        visibility: visible;
+    }
+    .menu-open .screen {
+        visibility: visible;
+        opacity: 1;
+        /* width: 0px; */
+    }
+    .main-nav li a {
+        text-transform: uppercase;
+        min-width: 200px;
+        display: block;
+        padding: 10px 20px;
+        transition: background-color .3s;
+    }
+    .main-nav li a:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .main-nav li {
+        border-bottom: 1px solid #c4c4c4;
+    }
+    .control-box {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    .color-icon * {
+        width: 42px;
+        height: 42px;
+    }
+    .canvas-container {
+        width: 330px;
+        height: 310px;
+    }
+    .my-canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .control-box {
+        grid-template-columns: repeat(5, minmax(40px, 40px));
+        grid-auto-rows: 40px;
+        gap: 25px;
+        max-width: 370px;
+    }
+    .canvas-stickers {
+        width: 303px;
+        height: 55px;
+        font-size: 3rem;
+        color: black;
+    }
+    .sticker {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 40px;
+    }
+    .control-box img {
+        width: 25px;
+        height: 25px;
+    }
+    .txt-meme {
+        width: 300px;
+        height: 40px;
+    }
+    .gallery-memes {
+        margin-top: 0px;
+    }
+    .share-btn, .save-btn {
+        height: 40px;
+        width: 85px;
+    }
+    .save-btn {
+        margin-left: 25px;
+        padding-top: 5px;
+    }
+    .generator {
+        flex-direction: column;
+        align-items: center;
+    }
+    .imgs-container {
+        grid-template-columns: repeat(auto-fill, minmax(163px, 163px));
+        grid-auto-rows: 163px;
+        gap: 10px;
+        max-width: 800px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+}

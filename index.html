@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MemeCreator</title>
+</head>
+
+<body onload="initPage()" onresize="onresizeCanvas()">
+    <div class="screen" onclick="toggleMenu()"></div>
+
+    <header class="main-header container flex space-between align-center">
+
+        <div class="logo">memegen</div>
+
+        <button class="btn-menu" onclick="toggleMenu()">☰</button>
+
+        <ul class="main-nav flex clean-list">
+            <li>
+                <a href="#" onclick="onGalleryClicked()">Gallery</a>
+            </li>
+            <li>
+                <a href="#" onclick="onMemesGalleryClicked()">Memes</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+        </ul>
+
+    </header>
+    <main class="main-container">
+
+        <main class="imgs-container"></main>
+
+        <div class="generator flex hidden">
+            <div class="canvas-container">
+                <canvas onclick="draw(event)" id="my-canvas" width="0" height="0"></canvas>
+            </div>
+            <div class="control-box ">
+                <input class="txt-meme" type="text" oninput="onSaveTxt(this.value);">
+                <button onclick="onChangeLine()" type="" value=""><img class="icon"
+                        src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" srcset=""></button>
+                <button onclick="onMovingTxt(this.value)" type="" value="down"><img class="icon"
+                        src="ICONS/down-arrow.png" alt="" srcset=""></button>
+                <button onclick="onMovingTxt(this.value)" onmousedown="onMovingTxt(this.value)" type="" value="up"><img
+                        class="icon" src="ICONS/up-arrow.png" alt="" srcset=""></button>
+                <button onclick="onChangeFontSize(this.value)" value="down"><img class="icon"
+                        src="ICONS/decrease font - icon.png" alt="" srcset=""></button>
+                <button onclick="onChangeFontSize(this.value)" value="up"><img class="icon"
+                        src="ICONS/increase font - icon.png" alt="" srcset=""></button>
+                <div class="color-icon" style="position:relative; ">
+                    <button>
+                        <img class="icon" src="ICONS/text stroke.png" alt="" srcset="">
+                    </button>
+                    <input type="color" onchange="setStrokeColor(this.value)" value="#ff0000"
+                        style="opacity:0; position:absolute; left:0;top:0;width:100%" />
+                </div>
+                <div class="color-icon" style="position:relative; ">
+                    <button>
+                        <img class="icon" src="ICONS/paint-board-and-brush.png" alt="" srcset="">
+                    </button>
+                    <input type="color" onchange="setFillColor(this.value)" value="#ff0000"
+                        style="opacity:0; position:absolute; left:0;top:0;width:100%" />
+                </div>
+                <button onclick="onChangeTextAlign(this.value)" value="left"><img class="icon"
+                        src="ICONS/align-to-left.png" alt="" srcset=""></button>
+                <button onclick="onChangeTextAlign(this.value)" value="center"><img class="icon"
+                        src="ICONS/center-text-alignment.png" alt="" srcset=""></button>
+                <button onclick="onChangeTextAlign(this.value)" value="right"><img class="icon"
+                        src="ICONS/align-to-right.png" alt="" srcset=""></button>
+                <button onclick="onTrashClick()"><img class="icon" src="ICONS/trash.png" alt="" srcset=""></button>
+                <div class="upload color-icon">
+                    <button class="" onclick="document.querySelector('.file-input.btn').click();" type="submit"><img
+                            class="icon" src="ICONS/add.png" alt="" srcset=""></button>
+                    <input style="visibility:hidden" type="file" class="file-input btn" name="image"
+                        onchange="onImgInput(event)" />
+                </div>
+                <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                    <input name="img" id="imgData" type="hidden" />
+                    <button class="btn share-btn" type="submit">Share</button>
+                </form>
+                <div class="canvas-stickers">
+                    <img onclick="onStickerClicked('1');" class="sticker" src="stickers/sticker1.png" alt=""></button>
+                    <img onclick="onStickerClicked('2')" class="sticker" src="stickers/sticker2.png" alt=""></button>
+                    <img onclick="onStickerClicked('3')" class="sticker" src="stickers/sticker3.png" alt=""></button>
+                    <!-- <button class="sticker" onclick="onStickerClicked(this.value)" value="3"><img class="sticker" src="stickers/sticker3.png" alt=""></button> -->
+                </div>
+                
+                <a href="#" class="btn save-btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+                
+                <a href="#" class="gallery-memes" onclick="onSaveMeme()">Save meme</a>
+
+            </div>
+        </div>
+        <main class="memes-container hidden"></main>
+
+    </main>
+
+
+    <footer class="main-footer">
+        <ul class="clean-list">
+            <li><a href="#" class="logo">memegen</a></li>
+            <li><a href="#">all rights reserved 2020</a></li>
+        </ul>
+        <script src="js/upload-service.js"></script>
+        <script src="js/service.js"></script>
+        <script src="js/main.js"></script>
+    </footer>
+</body>
+
+</html>
